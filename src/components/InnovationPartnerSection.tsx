@@ -25,7 +25,7 @@ const InnovationPartnerSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-secondary-section relative overflow-hidden spacing-120">
+    <section className="py-24 bg-secondary-section relative overflow-hidden spacing-70 lg:spacing-120">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-16 left-16 w-1 h-1 bg-[#A8DADC] rounded-full"></div>
@@ -33,7 +33,7 @@ const InnovationPartnerSection: React.FC = () => {
         <div className="absolute bottom-24 left-1/3 w-1 h-1 bg-[#A8DADC] rounded-full"></div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-[#A8DADC]/20 border border-[#A8DADC]/30 text-[#2F3E46] px-6 py-3 rounded-full text-sm font-semibold mb-6 shadow-[0_4px_8px_rgba(0,0,0,0.1)]">
@@ -57,7 +57,7 @@ const InnovationPartnerSection: React.FC = () => {
         </div>
 
         {/* Main Pitch Content */}
-        <div className="max-w-4xl mx-auto mb-16">
+        <div className="mx-auto mb-16">
           <Card className="border-0 shadow-[0_4px_8px_rgba(0,0,0,0.1)] bg-white/80 backdrop-blur-sm">
             <CardContent className="p-8 lg:p-12">
               <p className="text-lg sm:text-xl text-[#52616B] leading-relaxed mb-8">
@@ -109,13 +109,17 @@ const InnovationPartnerSection: React.FC = () => {
 
         {/* CTA Section */}
         <div className="text-center mt-12">
-          <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-8 py-4 rounded-lg shadow-[0_4px_8px_rgba(0,0,0,0.1)] border border-[#A8DADC]/20">
-            <Target className="h-5 w-5 text-[#A8DADC]" />
-            <span className="text-lg font-semibold text-[#2F3E46]">
-              Bereit, deine digitalen Potenziale voll auszuschöpfen?
-            </span>
-            <ArrowRight className="h-5 w-5 text-[#A8DADC]" />
-          </div>
+          <Card className="inline-block border-0 shadow-[0_4px_8px_rgba(0,0,0,0.1)] bg-white/80 backdrop-blur-sm border border-[#A8DADC]/20 max-w-4xl mx-auto">
+            <CardContent className="p-6">
+              <div className="flex items-center justify-center space-x-2">
+                <Target className="h-5 w-5 text-[#A8DADC]" />
+                <span className="text-lg font-semibold text-[#2F3E46]">
+                  Bereit, deine digitalen Potenziale voll auszuschöpfen?
+                </span>
+                <ArrowRight className="h-5 w-5 text-[#A8DADC]" />
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

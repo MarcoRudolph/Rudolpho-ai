@@ -18,19 +18,19 @@ const HeroSection: React.FC = () => {
         <div className="absolute bottom-20 right-20 w-1 h-1 bg-[#A8DADC] rounded-full"></div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 spacing-80">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         {/* 12-Column Grid Layout */}
-        <div className="grid grid-cols-12 gap-8 items-center">
+        <div className="grid grid-cols-12 gap-6 lg:gap-8 items-center">
           {/* Text Content - Col 1-6 (1-5 on large screens) */}
-          <div className="col-span-12 lg:col-span-6 xl:col-span-5 space-y-8 text-center lg:text-left">
-            <div className="space-y-6">
+          <div className="col-span-12 lg:col-span-6 xl:col-span-5 space-y-6 lg:space-y-8 text-center lg:text-left">
+            <div className="space-y-4 lg:space-y-6">
               {/* Badge */}
-              <div className="inline-flex items-center space-x-2 bg-[#A8DADC]/20 border border-[#A8DADC]/30 text-[#2F3E46] px-4 py-2 rounded-full text-sm font-medium">
-                <Sparkles className="h-4 w-4" />
+              <div className="inline-flex items-center space-x-2 bg-[#A8DADC]/20 border border-[#A8DADC]/30 text-[#2F3E46] px-3 py-2 rounded-full text-xs sm:text-sm font-medium">
+                <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
                 <span>KI-Experte für Automatisierung & Marketing</span>
               </div>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-[#2F3E46]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-[#2F3E46]">
                 Dein KI-Partner für{' '}
                 <span className="text-[#A8DADC]">
                   automatisierte Workflows
@@ -38,7 +38,7 @@ const HeroSection: React.FC = () => {
                 & authentische Influencer-Kampagnen
               </h1>
               
-              <p className="text-xl sm:text-2xl text-[#52616B] leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="text-lg sm:text-xl lg:text-2xl text-[#52616B] leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Ich helfe dir, manuelle Aufgaben zu eliminieren und deine Marke mit innovativen KI-Lösungen digital zu skalieren.
               </p>
             </div>
@@ -47,20 +47,20 @@ const HeroSection: React.FC = () => {
               <Button 
                 onClick={handleCTAClick}
                 size="lg" 
-                className="btn-primary text-lg px-8 py-6"
+                className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
               >
-                <Calendar className="mr-2 h-5 w-5" />
+                <Calendar className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Kostenloses Erstgespräch buchen
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
             </div>
           </div>
 
           {/* Portrait Image - Col 7-12 (6-12 on large screens) */}
-          <div className="col-span-12 lg:col-span-6 xl:col-span-7 flex justify-center lg:justify-end items-center">
+          <div className="col-span-12 lg:col-span-6 xl:col-span-7 flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
             <div className="relative">
               {/* Circular mask with shadow */}
-              <div className="relative w-[400px] h-[400px] rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.05)] overflow-hidden">
+              <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[400px] xl:h-[400px] rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.05)] overflow-hidden">
                 <img
                   src="/images/platzhalter_portrait.png"
                   alt="Rudolpho-AI - KI-Partner für automatisierte Workflows"
@@ -72,8 +72,8 @@ const HeroSection: React.FC = () => {
               </div>
               
               {/* Decorative elements in accent color */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-[#A8DADC]/30 rounded-full"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-[#FFE5D9]/30 rounded-full"></div>
+              <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-6 h-6 sm:w-8 sm:h-8 bg-[#A8DADC]/30 rounded-full"></div>
+              <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-4 h-4 sm:w-6 sm:h-6 bg-[#FFE5D9]/30 rounded-full"></div>
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, benefits, gradient, features }) => {
   return (
-    <Card className="group relative overflow-hidden border-0 shadow-[0_4px_8px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.1)] transition-all duration-500 bg-white/90 backdrop-blur-sm">
+    <Card className="group relative overflow-hidden border-0 shadow-[0_4px_8px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.1)] transition-all duration-500 bg-white/90 backdrop-blur-sm w-full min-w-0 max-w-none">
       {/* Subtle gradient background */}
       <div className={`absolute inset-0 ${gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
       
@@ -22,12 +22,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, ben
           <div className="p-3 rounded-xl bg-[#A8DADC] text-[#2F3E46] shadow-[0_4px_8px_rgba(0,0,0,0.1)]">
             {icon}
           </div>
-          <CardTitle className="text-2xl font-bold text-[#2F3E46]">{title}</CardTitle>
+          <CardTitle className="text-xl sm:text-2xl font-bold text-[#2F3E46]">{title}</CardTitle>
         </div>
       </CardHeader>
       
       <CardContent className="relative space-y-6">
-        <CardDescription className="text-lg text-[#52616B] leading-relaxed">
+        <CardDescription className="text-base sm:text-lg text-[#52616B] leading-relaxed">
           {description}
         </CardDescription>
         
@@ -39,7 +39,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, ben
           </h4>
           <ul className="space-y-2">
             {features.map((feature, index) => (
-              <li key={index} className="flex items-center space-x-3 text-[#52616B]">
+              <li key={index} className="flex items-center space-x-3 text-[#52616B] text-sm sm:text-base">
                 <div className="w-2 h-2 bg-[#A8DADC] rounded-full flex-shrink-0" />
                 <span>{feature}</span>
               </li>
@@ -52,7 +52,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, ben
           <h4 className="font-semibold text-[#2F3E46] text-lg">Vorteile:</h4>
           <ul className="space-y-2">
             {benefits.map((benefit, index) => (
-              <li key={index} className="flex items-center space-x-3 text-[#52616B]">
+              <li key={index} className="flex items-center space-x-3 text-[#52616B] text-sm sm:text-base">
                 <div className="w-2 h-2 bg-[#FFE5D9] rounded-full flex-shrink-0" />
                 <span>{benefit}</span>
               </li>
@@ -108,8 +108,8 @@ const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-primary-section spacing-120">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-24 bg-primary-section spacing-70 lg:spacing-120">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-[#2F3E46] mb-6">
@@ -125,52 +125,53 @@ const ServicesSection: React.FC = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-6 lg:gap-8 w-full">
           {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-              benefits={service.benefits}
-              gradient={service.gradient}
-              features={service.features}
-            />
+            <div key={index} className="w-full min-w-0">
+              <ServiceCard
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                benefits={service.benefits}
+                gradient={service.gradient}
+                features={service.features}
+              />
+            </div>
           ))}
         </div>
 
         {/* Additional Features */}
-        <div className="mt-20 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="text-center space-y-4">
+        <div className="mt-20 grid grid-cols-1 gap-6 lg:gap-8 w-full">
+          <div className="text-center space-y-4 w-full">
             <div className="mx-auto w-16 h-16 bg-[#A8DADC] rounded-2xl flex items-center justify-center shadow-[0_4px_8px_rgba(0,0,0,0.1)]">
               <LayoutGrid className="h-8 w-8 text-[#2F3E46]" />
             </div>
-            <h3 className="text-xl font-semibold text-[#2F3E46]">Intuitive Dashboards</h3>
-            <p className="text-[#52616B]">Vollständige Kontrolle über alle Prozesse</p>
+            <h3 className="text-lg sm:text-xl font-semibold text-[#2F3E46]">Intuitive Dashboards</h3>
+            <p className="text-[#52616B] text-sm sm:text-base">Vollständige Kontrolle über alle Prozesse</p>
           </div>
           
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-4 w-full">
             <div className="mx-auto w-16 h-16 bg-[#FFE5D9] rounded-2xl flex items-center justify-center shadow-[0_4px_8px_rgba(0,0,0,0.1)]">
               <MessageCircle className="h-8 w-8 text-[#2F3E46]" />
             </div>
-            <h3 className="text-xl font-semibold text-[#2F3E46]">Automatisierte Chats</h3>
-            <p className="text-[#52616B]">Authentische Interaktionen rund um die Uhr</p>
+            <h3 className="text-lg sm:text-xl font-semibold text-[#2F3E46]">Automatisierte Chats</h3>
+            <p className="text-[#52616B] text-sm sm:text-base">Authentische Interaktionen rund um die Uhr</p>
           </div>
           
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-4 w-full">
             <div className="mx-auto w-16 h-16 bg-[#A8DADC] rounded-2xl flex items-center justify-center shadow-[0_4px_8px_rgba(0,0,0,0.1)]">
               <Mic className="h-8 w-8 text-[#2F3E46]" />
             </div>
-            <h3 className="text-xl font-semibold text-[#2F3E46]">Voice-Nachrichten</h3>
-            <p className="text-[#52616B]">Lebensechte Kommunikation mit ElevenLabs</p>
+            <h3 className="text-lg sm:text-xl font-semibold text-[#2F3E46]">Voice-Nachrichten</h3>
+            <p className="text-[#52616B] text-sm sm:text-base">Lebensechte Kommunikation mit ElevenLabs</p>
           </div>
           
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-4 w-full">
             <div className="mx-auto w-16 h-16 bg-[#FFE5D9] rounded-2xl flex items-center justify-center shadow-[0_4px_8px_rgba(0,0,0,0.1)]">
               <TrendingUp className="h-8 w-8 text-[#2F3E46]" />
             </div>
-            <h3 className="text-xl font-semibold text-[#2F3E46]">Messbare Ergebnisse</h3>
-            <p className="text-[#52616B]">Transparente KPIs und kontinuierliche Optimierung</p>
+            <h3 className="text-lg sm:text-xl font-semibold text-[#2F3E46]">Messbare Ergebnisse</h3>
+            <p className="text-[#52616B] text-sm sm:text-base">Transparente KPIs und kontinuierliche Optimierung</p>
           </div>
         </div>
       </div>

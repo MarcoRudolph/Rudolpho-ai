@@ -11,7 +11,7 @@ const PrivacyPolicy: React.FC = () => {
     <div className="min-h-screen bg-primary-section">
       {/* Header */}
       <div className="bg-white shadow-[0_4px_8px_rgba(0,0,0,0.1)]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold text-[#2F3E46]">
               <span className="text-[#A8DADC]">Rudolpho-AI</span> - Datenschutzerklärung
@@ -29,7 +29,7 @@ const PrivacyPolicy: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-[0_4px_8px_rgba(0,0,0,0.1)] p-8 lg:p-12">
           <div className="prose prose-lg max-w-none">
             <h1>Datenschutzerklärung</h1>

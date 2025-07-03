@@ -46,8 +46,8 @@ const PhilosophySection: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-primary-section spacing-120">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-24 bg-primary-section spacing-70 lg:spacing-120">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-[#2F3E46] mb-6">
@@ -63,25 +63,27 @@ const PhilosophySection: React.FC = () => {
         </div>
 
         {/* Principles Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 gap-6 lg:gap-8 mb-20 w-full">
           {principles.map((principle, index) => (
-            <Card key={index} className="border-0 shadow-[0_4px_8px_rgba(0,0,0,0.1)] bg-white/90 backdrop-blur-sm hover:shadow-[0_8px_16px_rgba(0,0,0,0.1)] transition-all duration-500">
-              <CardHeader className="text-center">
-                <div className={`mx-auto w-16 h-16 ${principle.color} rounded-2xl flex items-center justify-center shadow-[0_4px_8px_rgba(0,0,0,0.1)] mb-4`}>
-                  <div className="text-[#2F3E46]">
-                    {principle.icon}
+            <div key={index} className="w-full min-w-0">
+              <Card className="border-0 shadow-[0_4px_8px_rgba(0,0,0,0.1)] bg-white/90 backdrop-blur-sm hover:shadow-[0_8px_16px_rgba(0,0,0,0.1)] transition-all duration-500 w-full min-w-0 max-w-none">
+                <CardHeader className="text-center">
+                  <div className={`mx-auto w-16 h-16 ${principle.color} rounded-2xl flex items-center justify-center shadow-[0_4px_8px_rgba(0,0,0,0.1)] mb-4`}>
+                    <div className="text-[#2F3E46]">
+                      {principle.icon}
+                    </div>
                   </div>
-                </div>
-                <CardTitle className="text-2xl font-bold text-[#2F3E46]">
-                  {principle.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-[#52616B] leading-relaxed text-center">
-                  {principle.description}
-                </p>
-              </CardContent>
-            </Card>
+                  <CardTitle className="text-xl sm:text-2xl font-bold text-[#2F3E46]">
+                    {principle.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-[#52616B] leading-relaxed text-center text-sm sm:text-base">
+                    {principle.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           ))}
         </div>
 
@@ -96,20 +98,20 @@ const PhilosophySection: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-6 lg:gap-8 w-full">
             {processSteps.map((step, index) => (
-              <div key={index} className="relative">
-                {/* Connection Line */}
+              <div key={index} className="relative w-full min-w-0">
+                {/* Connection Line - only show on larger screens */}
                 {index < processSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-[#A8DADC]/30 z-0" />
+                  <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-[#A8DADC]/30 z-0" />
                 )}
                 
-                <Card className="relative border-0 shadow-[0_4px_8px_rgba(0,0,0,0.1)] bg-white/90 backdrop-blur-sm hover:shadow-[0_8px_16px_rgba(0,0,0,0.1)] transition-all duration-500">
+                <Card className="relative border-0 shadow-[0_4px_8px_rgba(0,0,0,0.1)] bg-white/90 backdrop-blur-sm hover:shadow-[0_8px_16px_rgba(0,0,0,0.1)] transition-all duration-500 w-full min-w-0 max-w-none">
                   <CardHeader className="text-center">
                     <div className="mx-auto w-12 h-12 bg-[#A8DADC] rounded-xl flex items-center justify-center shadow-[0_4px_8px_rgba(0,0,0,0.1)] mb-4">
                       <span className="text-[#2F3E46] font-bold text-lg">{step.step}</span>
                     </div>
-                    <CardTitle className="text-xl font-bold text-[#2F3E46] flex items-center justify-center">
+                    <CardTitle className="text-lg sm:text-xl font-bold text-[#2F3E46] flex items-center justify-center">
                       <div className="mr-2 text-[#A8DADC]">
                         {step.icon}
                       </div>
@@ -117,7 +119,7 @@ const PhilosophySection: React.FC = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-[#52616B] leading-relaxed text-center">
+                    <p className="text-[#52616B] leading-relaxed text-center text-sm sm:text-base">
                       {step.description}
                     </p>
                   </CardContent>
@@ -142,7 +144,7 @@ const PhilosophySection: React.FC = () => {
                 Gemeinsam entwickeln wir Lösungen, die dein Business auf das nächste Level bringen.
               </p>
               
-              <div className="grid md:grid-cols-2 gap-6 text-left">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 text-left">
                 <div className="space-y-3">
                   <h4 className="font-semibold text-lg">Was du bekommst:</h4>
                   <ul className="space-y-2">

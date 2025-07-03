@@ -36,7 +36,7 @@ const Navigation: React.FC = () => {
         ? 'bg-white/95 backdrop-blur-md shadow-[0_4px_8px_rgba(0,0,0,0.1)] border-b border-[#EAF1F8]' 
         : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center">

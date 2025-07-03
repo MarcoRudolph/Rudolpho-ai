@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-[#2F3E46] text-white">
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {footerSections.map((section, index) => (
             <div key={index} className="space-y-4">
@@ -120,7 +120,7 @@ const Footer: React.FC = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-[#52616B]/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="text-[#52616B] text-sm">

@@ -45,8 +45,8 @@ const CTASection: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-secondary-section spacing-120">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 bg-secondary-section spacing-70 lg:spacing-120">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-[#2F3E46] mb-6">

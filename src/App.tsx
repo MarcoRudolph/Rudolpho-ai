@@ -26,13 +26,15 @@ const MainPage = () => (
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/datenschutz" element={<PrivacyPolicy />} />
-        <Route path="/impressum" element={<Impressum />} />
-      </Routes>
-    </Router>
+    <div className="w-full overflow-x-hidden">
+      <Router>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/datenschutz" element={<PrivacyPolicy />} />
+          <Route path="/impressum" element={<Impressum />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
