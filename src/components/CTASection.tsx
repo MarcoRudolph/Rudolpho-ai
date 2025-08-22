@@ -1,20 +1,61 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
-import { Calendar, Mail, Phone, ArrowRight, MessageCircle, Zap } from 'lucide-react';
+import { Calendar, Mail, Phone, ArrowRight, MessageCircle, Zap, Download } from 'lucide-react';
 
 const CTASection: React.FC = () => {
   const handleCalendarClick = () => {
-    // TODO: Implement calendar booking functionality
-    console.log('Calendar clicked - redirect to booking');
+    console.log('Calendar button clicked!'); // Debug log
+    alert('Button clicked! Opening mail client...'); // Visual feedback
+    const mailtoLink = 'mailto:marcorudolph09@proton.me?subject=Kostenloses Erstgespräch buchen';
+    window.location.href = mailtoLink;
   };
 
   const handleEmailClick = () => {
-    window.location.href = 'mailto:rudolpho@rudolpho-ai.com';
+    window.location.href = 'mailto:marcorudolph09@proton.me';
   };
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:+49123456789';
+    window.location.href = 'tel:+4948939373110';
+  };
+
+  // Prüfen ob es sich um ein mobiles Gerät handelt
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // vCard für Desktop-Nutzer erstellen und herunterladen
+  const handleContactDownload = () => {
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Marco Rudolph
+ORG:Rudolpho-AI
+TITLE:KI-Experte für Automatisierung & Marketing
+TEL:+4948939373110
+EMAIL:marcorudolph09@proton.me
+ADR:;;Deutschland
+URL:https://rudolpho-ai.com
+NOTE:Spezialist für Automatisierung, KI und digitale Produktentwicklung
+END:VCARD`;
+
+    const blob = new Blob([vcard], { type: 'text/vcard' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Marco_Rudolph_Rudolpho-AI.vcf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
   };
 
   const contactMethods = [
@@ -79,31 +120,101 @@ const CTASection: React.FC = () => {
               </div>
 
               {/* Contact Methods Grid */}
-              <div className="grid md:grid-cols-3 gap-6">
-                {contactMethods.map((method, index) => (
-                  <div key={index} className="text-center space-y-4">
-                    <div className={`mx-auto w-12 h-12 ${method.color} rounded-xl flex items-center justify-center shadow-[0_4px_8px_rgba(0,0,0,0.1)]`}>
-                      <div className="text-[#2F3E46]">
-                        {method.icon}
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-[#2F3E46] text-lg mb-2">
-                        {method.title}
-                      </h4>
-                      <p className="text-[#52616B] text-sm leading-relaxed mb-4">
-                        {method.description}
-                      </p>
-                      <Button 
-                        onClick={method.onClick}
-                        className="btn-primary w-full"
-                      >
-                        {method.action}
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* First Method - Email */}
+                <div className="text-center space-y-4">
+                  <div className="mx-auto w-12 h-12 bg-[#FFE5D9] rounded-xl flex items-center justify-center shadow-[0_4px_8px_rgba(0,0,0,0.1)]">
+                    <div className="text-[#2F3E46]">
+                      <Mail className="h-6 w-6" />
                     </div>
                   </div>
-                ))}
+                  <div>
+                    <h4 className="font-semibold text-[#2F3E46] text-lg mb-2">
+                      E-Mail Kontakt
+                    </h4>
+                    <p className="text-[#52616B] text-sm leading-relaxed mb-4">
+                      Schreibe mir eine detaillierte Nachricht über dein Projekt und deine Anforderungen.
+                    </p>
+                    <button 
+                      onClick={handleEmailClick}
+                      style={{ 
+                        backgroundColor: '#FFE5D9',
+                        color: '#2F3E46',
+                        padding: '12px 24px',
+                        borderRadius: '8px',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '16px',
+                        fontWeight: '500',
+                        width: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                        boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+                        transition: 'all 0.3s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = '#F5D4C8';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = '#FFE5D9';
+                      }}
+                    >
+                      E-Mail senden
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Second Method - Phone/Contact */}
+                <div className="text-center space-y-4">
+                  <div className="mx-auto w-12 h-12 bg-[#A8DADC] rounded-xl flex items-center justify-center shadow-[0_4px_8px_rgba(0,0,0,0.1)]">
+                    <div className="text-[#2F3E46]">
+                      {isMobile ? <Phone className="h-6 w-6" /> : <Download className="h-6 w-6" />}
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-[#2F3E46] text-lg mb-2">
+                      {isMobile ? 'Direkter Anruf' : 'Kontakt herunterladen'}
+                    </h4>
+                    <p className="text-[#52616B] text-sm leading-relaxed mb-4">
+                      {isMobile 
+                        ? 'Sprich direkt mit mir über deine Ideen und lass uns gemeinsam deine Vision entwickeln.'
+                        : 'Lade meine Kontaktdaten als vCard herunter und importiere sie in deine Kontakte.'
+                      }
+                    </p>
+                    <button 
+                      onClick={isMobile ? handlePhoneClick : handleContactDownload}
+                      style={{ 
+                        backgroundColor: '#A8DADC',
+                        color: '#2F3E46',
+                        padding: '12px 24px',
+                        borderRadius: '8px',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '16px',
+                        fontWeight: '500',
+                        width: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                        boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+                        transition: 'all 0.3s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = '#9BCFD1';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = '#A8DADC';
+                      }}
+                    >
+                      {isMobile ? 'Anrufen' : 'Kontakt herunterladen'}
+                      {isMobile ? <ArrowRight className="h-4 w-4" /> : <Download className="h-4 w-4" />}
+                    </button>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>

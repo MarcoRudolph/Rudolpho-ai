@@ -9,24 +9,18 @@ const Footer: React.FC = () => {
       content: (
         <div className="space-y-4">
           <h3 className="text-2xl font-bold text-[#A8DADC]">Rudolpho-AI</h3>
-          <p className="text-[#52616B] leading-relaxed">
+          <p className="text-[#A8DADC] leading-relaxed">
             Dein spezialisierter Partner für Automatisierung, KI und digitale Produktentwicklung. 
             Gemeinsam bringen wir dein Business auf das nächste Level.
           </p>
-          <div className="flex space-x-4">
-            <a href="#" className="text-[#52616B] hover:text-[#A8DADC] transition-colors duration-300">
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-[#52616B] hover:text-[#A8DADC] transition-colors duration-300">
-              <Twitter className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-[#52616B] hover:text-[#A8DADC] transition-colors duration-300">
-              <Instagram className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-[#52616B] hover:text-[#A8DADC] transition-colors duration-300">
-              <Github className="h-5 w-5" />
-            </a>
-          </div>
+                                                      <div className="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/marco-rudolph-5b33a5175/" target="_blank" rel="noopener noreferrer" className="text-[#A8DADC] hover:text-white transition-colors duration-300">
+                          <Linkedin className="h-5 w-5" />
+                        </a>
+                        <a href="https://github.com/MarcoRudolph" target="_blank" rel="noopener noreferrer" className="text-[#A8DADC] hover:text-white transition-colors duration-300">
+                          <Github className="h-5 w-5" />
+                        </a>
+                      </div>
         </div>
       )
     },
@@ -56,20 +50,25 @@ const Footer: React.FC = () => {
         <div className="space-y-4">
           <div className="flex items-center space-x-3">
             <Mail className="h-5 w-5 text-[#A8DADC]" />
-            <a href="mailto:MarcoRudolph09@proton.me" className="text-[#52616B] hover:text-[#A8DADC] transition-colors duration-300">
+            <a href="mailto:MarcoRudolph09@proton.me" className="text-[#A8DADC] hover:text-white transition-colors duration-300">
               MarcoRudolph09@proton.me
             </a>
           </div>
           <div className="flex items-center space-x-3">
             <Phone className="h-5 w-5 text-[#A8DADC]" />
-            <a href="tel:+4948939373110" className="text-[#52616B] hover:text-[#A8DADC] transition-colors duration-300">
+            <a href="tel:+4948939373110" className="text-[#A8DADC] hover:text-white transition-colors duration-300">
               +49 4893 9373110
             </a>
           </div>
           <div className="flex items-center space-x-3">
             <MapPin className="h-5 w-5 text-[#A8DADC]" />
-            <span className="text-[#52616B]">
+            <span className="text-[#A8DADC]">
               Deutschland
+            </span>
+          </div>
+          <div className="flex items-center space-x-3">
+            <span className="text-[#A8DADC] text-sm">
+              USt-IdNr.: DE455180377
             </span>
           </div>
         </div>
@@ -80,8 +79,8 @@ const Footer: React.FC = () => {
   const legalLinks = [
     { label: "Impressum", href: "/impressum" },
     { label: "Datenschutz", href: "/datenschutz" },
-    { label: "AGB", href: "#" },
-    { label: "Cookie-Einstellungen", href: "#" }
+    { label: "AGB", href: "/terms" },
+    { label: "Cookie-Einstellungen", href: "/cookie-settings" }
   ];
 
   return (
@@ -105,7 +104,7 @@ const Footer: React.FC = () => {
                     <li key={linkIndex}>
                       <a 
                         href={link.href}
-                        className="text-[#52616B] hover:text-[#A8DADC] transition-colors duration-300"
+                        className="text-[#A8DADC] hover:text-white transition-colors duration-300"
                       >
                         {link.label}
                       </a>
@@ -123,7 +122,7 @@ const Footer: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
-            <div className="text-[#52616B] text-sm">
+            <div className="text-[#A8DADC] text-sm">
               © {currentYear} Rudolpho-AI. Alle Rechte vorbehalten.
             </div>
             
@@ -133,7 +132,7 @@ const Footer: React.FC = () => {
                 <a 
                   key={index}
                   href={link.href}
-                  className="text-[#52616B] hover:text-[#A8DADC] transition-colors duration-300 text-sm"
+                  className="text-[#A8DADC] hover:text-white transition-colors duration-300 text-sm"
                 >
                   {link.label}
                 </a>

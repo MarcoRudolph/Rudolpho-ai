@@ -1,17 +1,18 @@
 import React from 'react';
 import { Button } from './ui/button';
-import { ArrowRight, Calendar, Sparkles } from 'lucide-react';
+import { ArrowRight, Mail, Sparkles } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   const handleCTAClick = () => {
-    // TODO: Implement calendar booking functionality
-    console.log('CTA clicked - redirect to calendar');
+    console.log('Hero CTA button clicked!'); // Debug log
+    const mailtoLink = 'mailto:marcorudolph09@proton.me?subject=Kostenloses Erstgespräch buchen';
+    window.location.href = mailtoLink;
   };
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-section">
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-30" style={{ zIndex: 1 }}>
         <div className="absolute top-20 left-20 w-2 h-2 bg-[#A8DADC] rounded-full"></div>
         <div className="absolute top-40 right-32 w-1 h-1 bg-[#A8DADC] rounded-full"></div>
         <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-[#A8DADC] rounded-full"></div>
@@ -44,15 +45,16 @@ const HeroSection: React.FC = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                onClick={handleCTAClick}
-                size="lg" 
-                className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
-              >
-                <Calendar className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                Kostenloses Erstgespräch buchen
-                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-              </Button>
+                             <Button 
+                 onClick={handleCTAClick}
+                 className="w-full bg-[#A8DADC] text-[#2F3E46] hover:bg-[#9BCFD1] transition-colors duration-300 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 relative z-10"
+                 size="lg"
+                 style={{ position: 'relative', zIndex: 10 }}
+               >
+                 <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                 Kostenloses Erstgespräch buchen
+                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+               </Button>
             </div>
           </div>
 

@@ -105,7 +105,7 @@
   /* Custom Button Styles */
   .btn-primary {
     @apply bg-[#A8DADC] text-[#2F3E46] rounded-lg shadow-[0_4px_8px_rgba(0,0,0,0.1)] 
-           hover:bg-[#9BCFD1] transition-all duration-300 font-medium;
+           hover:bg-[#9BCFD1] transition-all duration-300 font-medium cursor-pointer;
   }
   
   .btn-secondary {

@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from './ui/button';
 
-const Impressum: React.FC = () => {
+const Terms: React.FC = () => {
   const handleBackClick = () => {
     window.history.back();
   };
@@ -14,7 +14,7 @@ const Impressum: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold text-[#2F3E46]">
-              <span className="text-[#A8DADC]">Rudolpho-AI</span> - Impressum
+              <span className="text-[#A8DADC]">Rudolpho-AI</span> - Allgemeine Geschäftsbedingungen
             </h1>
             <Button 
               onClick={handleBackClick}
@@ -33,143 +33,126 @@ const Impressum: React.FC = () => {
         <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-[0_4px_8px_rgba(0,0,0,0.1)] p-8 lg:p-12">
           <div className="max-w-none">
             <h1 className="text-4xl font-bold text-[#2F3E46] mb-8 text-center border-b-2 border-[#A8DADC] pb-4">
-              Impressum
+              Allgemeine Geschäftsbedingungen
             </h1>
 
             <div className="space-y-8">
               <section>
                 <h2 className="text-2xl font-bold text-[#2F3E46] mb-4 flex items-center">
                   <span className="bg-[#A8DADC] text-[#2F3E46] px-3 py-1 rounded-lg text-lg font-bold mr-3">
-                    1
+                    §1
                   </span>
-                  Angaben gemäß § 5 TMG
+                  Geltungsbereich
                 </h2>
                 <p className="text-lg text-[#52616B] leading-relaxed">
-                  Marco Rudolph<br />
-                  Rudolpho-AI. KI-Partner für automatisierte Workflows, authentische Influencer Kampagnen und nutzerzentrierte Web-Erlebnisse.<br />
-                  No de Halloh 8a<br />
-                  25591 Ottenbüttel<br />
-                  USt-IdNr.: DE455180377
+                  Diese Allgemeinen Geschäftsbedingungen gelten für alle Geschäftsbeziehungen zwischen 
+                  Marco Rudolph (Rudolpho-AI) und seinen Kunden in der zum Zeitpunkt des Vertragsabschlusses gültigen Fassung.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold text-[#2F3E46] mb-4 flex items-center">
                   <span className="bg-[#A8DADC] text-[#2F3E46] px-3 py-1 rounded-lg text-lg font-bold mr-3">
-                    2
+                    §2
                   </span>
-                  Gewerbeanmeldung
+                  Vertragsschluss
                 </h2>
                 <p className="text-lg text-[#52616B] leading-relaxed">
-                  <strong>Gewerbe:</strong> Einzelunternehmen<br />
-                  <strong>Gewerbeanmeldung:</strong> Amtsgericht Itzehoe<br />
-                  <strong>Steuernummer:</strong> 18/172/04052 (Finanzamt Itzehoe)
+                  Der Vertrag kommt durch Angebot und Annahme zustande. Unsere Angebote sind freibleibend. 
+                  Der Kunde kann das Angebot innerhalb von 14 Tagen annehmen.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold text-[#2F3E46] mb-4 flex items-center">
                   <span className="bg-[#A8DADC] text-[#2F3E46] px-3 py-1 rounded-lg text-lg font-bold mr-3">
-                    3
+                    §3
                   </span>
-                  Kontakt
+                  Leistungsumfang
                 </h2>
                 <p className="text-lg text-[#52616B] leading-relaxed">
-                  Telefon: 015116321085<br />
-                  E-Mail: marcorudolph09@proton.me
+                  Der Leistungsumfang ergibt sich aus der jeweiligen Vereinbarung. Änderungen oder Ergänzungen 
+                  bedürfen der Schriftform. Wir behalten uns vor, bei unvorhergesehenen technischen Schwierigkeiten 
+                  alternative Lösungen anzubieten.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold text-[#2F3E46] mb-4 flex items-center">
                   <span className="bg-[#A8DADC] text-[#2F3E46] px-3 py-1 rounded-lg text-lg font-bold mr-3">
-                    4
+                    §4
                   </span>
-                  Berufsbezeichnung und berufsrechtliche Regelungen
+                  Preise und Zahlungsbedingungen
                 </h2>
                 <p className="text-lg text-[#52616B] leading-relaxed">
-                  <strong>Berufsbezeichnung:</strong><br />
-                  Softwareentwickler
-                </p>
-                <p className="text-lg text-[#52616B] leading-relaxed">
-                  <strong>Verliehen in:</strong><br />
-                  Deutschland
+                  Alle Preise verstehen sich zuzüglich der gesetzlichen Mehrwertsteuer. Rechnungen sind 
+                  innerhalb von 14 Tagen nach Rechnungsstellung zur Zahlung fällig. Bei Verzug gelten die 
+                  gesetzlichen Verzugszinsen.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold text-[#2F3E46] mb-4 flex items-center">
                   <span className="bg-[#A8DADC] text-[#2F3E46] px-3 py-1 rounded-lg text-lg font-bold mr-3">
-                    5
+                    §5
                   </span>
-                  Angaben zur Berufshaftpflichtversicherung
+                  Liefer- und Leistungszeiten
                 </h2>
                 <p className="text-lg text-[#52616B] leading-relaxed">
-                  <strong>Name und Sitz des Versicherers:</strong><br />
-                  LVM Versicherung<br />
-                  48126 Münster<br />
-                  0251 702-0<br />
-                  info@lvm.de
-                </p>
-                <p className="text-lg text-[#52616B] leading-relaxed">
-                  <strong>Geltungsraum der Versicherung:</strong><br />
-                  Deutschland
+                  Liefer- und Leistungszeiten sind unverbindlich, sofern nicht ausdrücklich als verbindlich 
+                  vereinbart. Wir bemühen uns, die vereinbarten Termine einzuhalten.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold text-[#2F3E46] mb-4 flex items-center">
                   <span className="bg-[#A8DADC] text-[#2F3E46] px-3 py-1 rounded-lg text-lg font-bold mr-3">
-                    6
+                    §6
                   </span>
-                  Redaktionell verantwortlich
+                  Gewährleistung
                 </h2>
                 <p className="text-lg text-[#52616B] leading-relaxed">
-                  Marco Rudolph
+                  Es gelten die gesetzlichen Gewährleistungsrechte. Bei Mängeln haben Sie das Recht auf 
+                  Nacherfüllung, Minderung oder Rücktritt vom Vertrag.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold text-[#2F3E46] mb-4 flex items-center">
                   <span className="bg-[#A8DADC] text-[#2F3E46] px-3 py-1 rounded-lg text-lg font-bold mr-3">
-                    7
+                    §7
                   </span>
-                  EU-Streitschlichtung
+                  Haftung
                 </h2>
                 <p className="text-lg text-[#52616B] leading-relaxed">
-                  Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-[#A8DADC] hover:underline">https://ec.europa.eu/consumers/odr/</a>.<br /> 
-                  Unsere E-Mail-Adresse finden Sie oben im Impressum.
+                  Wir haften für Vorsatz und grobe Fahrlässigkeit. Die Haftung für leichte Fahrlässigkeit 
+                  ist auf den vorhersehbaren, typischerweise entstehenden Schaden begrenzt.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold text-[#2F3E46] mb-4 flex items-center">
                   <span className="bg-[#A8DADC] text-[#2F3E46] px-3 py-1 rounded-lg text-lg font-bold mr-3">
-                    8
+                    §8
                   </span>
-                  Verbraucherstreitbeilegung/Universalschlichtungsstelle
+                  Datenschutz
                 </h2>
                 <p className="text-lg text-[#52616B] leading-relaxed">
-                  Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                  Die Erhebung, Verarbeitung und Nutzung Ihrer personenbezogenen Daten erfolgt gemäß 
+                  unserer Datenschutzerklärung und den geltenden datenschutzrechtlichen Bestimmungen.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold text-[#2F3E46] mb-4 flex items-center">
                   <span className="bg-[#A8DADC] text-[#2F3E46] px-3 py-1 rounded-lg text-lg font-bold mr-3">
-                    9
+                    §9
                   </span>
-                  Zentrale Kontaktstelle nach dem Digital Services Act - DSA
+                  Schlussbestimmungen
                 </h2>
                 <p className="text-lg text-[#52616B] leading-relaxed">
-                  Unsere zentrale Kontaktstelle für Nutzer und Behörden nach Art. 11, 12 DSA (Verordnung (EU) 2022/265) erreichen Sie wie folgt:
-                </p>
-                <p className="text-lg text-[#52616B] leading-relaxed">
-                  E-Mail: marcorudolph09@proton.me<br />
-                  Telefon: 015116321085
-                </p>
-                <p className="text-lg text-[#52616B] leading-relaxed">
-                  Die für den Kontakt zur Verfügung stehenden Sprachen sind: Deutsch, Englisch.
+                  Sollten einzelne Bestimmungen unwirksam sein, bleibt der Vertrag im Übrigen wirksam. 
+                  Es gilt das Recht der Bundesrepublik Deutschland. Gerichtsstand ist Itzehoe.
                 </p>
               </section>
             </div>
@@ -177,9 +160,6 @@ const Impressum: React.FC = () => {
             <div className="mt-12 pt-8 border-t-2 border-[#EAF1F8] text-center">
               <p className="text-lg text-[#52616B] font-medium">
                 Stand: {new Date().toLocaleDateString('de-DE')}
-              </p>
-              <p className="text-sm text-[#52616B] mt-4">
-                Quelle: <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer" className="text-[#A8DADC] hover:underline">https://www.e-recht24.de</a>
               </p>
             </div>
           </div>
@@ -189,4 +169,5 @@ const Impressum: React.FC = () => {
   );
 };
 
-export default Impressum; 
+export default Terms;
+
